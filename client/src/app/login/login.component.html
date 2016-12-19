@@ -1,0 +1,21 @@
+
+<div   *ngIf="!loginService.isLoggedIn()" >
+  <form>
+    <input type="text" name="login" value="" #login>
+    <input type="text" name="password" value="" #password>
+    <button (click)="onSubmit( login.value , password.value )">Sing in</button>
+  </form>
+</div>
+
+<div   *ngIf="loginService.isLoggedIn()" >
+Вы в системе !<br>
+  <ul>
+    <li>
+      <a routerLink="/tasks">-> Tasks</a>
+
+    </li>
+    <li>
+      <a routerLink="/logout">-> LogoUot</a>
+    </li>
+  </ul>
+</div>
